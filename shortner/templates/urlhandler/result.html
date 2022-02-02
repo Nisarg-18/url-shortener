@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="p-5 text-center">
+    <div class="container">
+        <h2>
+            Here's your <span class="text-primary">Shortened URL!</span>
+        </h2>
+    </div>
+</section>
+
+<section>
+    <div class="container px-5">
+        <h4>
+            <span class="text-secondary">Original URL:</span> {{ link }}   
+        </h4>
+        <h4>
+           <span class="text-secondary">Shortened URL:</span> localhost:8000/{{ uid }}
+        </h4>
+    </div>
+</section>
+<section class="p-5">
+    <div class="container text-center">
+        <a href="{% url 'home' %}" class="btn btn-dark">
+            Shorten another URL
+        </a>
+    </div>
+</section>
+{% endblock %}

@@ -5,11 +5,6 @@ from .models import Url
 def home(request):
     return render(request, 'urlhandler/home.html')
 
-
-def search(request,id):
-    link=Url.objects.get(uid=id)
-    return redirect(link.link)
-
 def result(request):
     link=''
     uid=''
@@ -23,9 +18,11 @@ def result(request):
             'uid':uid,
             'link':link,
         }
-        return render(request, 'urlhandler/home.html', data)
-    
+    return render(request, 'urlhandler/result.html', data)
     
 
+def search(request,id):
+    link=Url.objects.get(uid=id)
+    return redirect(link.link)
+
     
-        
